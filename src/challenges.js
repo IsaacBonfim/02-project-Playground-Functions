@@ -70,13 +70,19 @@ function highestCount(array) {
   return count;
 }
 
-let teste = [0, 0, 0];
-
-console.log(highestCount(teste));
-
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  let vencedor = null;
+
+  if ((cat1 - mouse) < (cat2 - mouse)) {
+    vencedor = 'cat1';
+  } else if ((cat2 - mouse) < (cat1 - mouse)) {
+    vencedor = 'cat2';
+  } else if ((cat1 - mouse) === (cat2 - mouse)) {
+    vencedor = 'os gatos trombam e o rato foge';
+  }
+
+  return vencedor;
 }
 
 // Desafio 8

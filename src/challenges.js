@@ -25,14 +25,22 @@ function splitSentence(string) {
   return separador;
 }
 
-let frase = 'vamo que vamo';
-
-console.log(splitSentence(frase));
-
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(array) {
+  let concatenado = array[array.length - 1];
+
+  for (let i = array.length - 1; i >= 0; i -= 1) {
+    if (i === 0) {
+      concatenado += `, ${array[i]}`;
+    }
+  }
+
+  return concatenado;
 }
+
+let teste = ['captain', 'my', 'captain'];
+
+console.log(concatName(teste));
 
 // Desafio 5
 function footballPoints() {

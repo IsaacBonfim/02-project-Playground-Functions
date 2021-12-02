@@ -1,6 +1,14 @@
 // Desafio 1
-function compareTrue() {
+function compareTrue(p1, p2) {
+  let result = null;
 
+  if (p1 === true && p2 === true) {
+    result = true;
+  } else {
+    result = false;
+  }
+
+  return result;
 }
 
 // Desafio 2

@@ -20,9 +20,9 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(string) {
-  let separador = string.split(' ');
+  let separado = string.split(' ');
 
-  return separador;
+  return separado;
 }
 
 // Desafio 4
@@ -71,14 +71,26 @@ function highestCount(array) {
 }
 
 // Desafio 7
+function inverteNegativo(num) {
+  if (num < 0) {
+    num *= -1;
+  }
+  return num;
+}
+
 function catAndMouse(mouse, cat1, cat2) {
   let vencedor = null;
+  let gato1 = cat1 - mouse;
+  let gato2 = cat2 - mouse;
 
-  if ((cat1 - mouse) < (cat2 - mouse)) {
+  gato1 = inverteNegativo(gato1);
+  gato2 = inverteNegativo(gato2);
+
+  if ((gato1) < (gato2)) {
     vencedor = 'cat1';
-  } else if ((cat2 - mouse) < (cat1 - mouse)) {
+  } else if ((gato2) < (gato1)) {
     vencedor = 'cat2';
-  } else if ((cat1 - mouse) === (cat2 - mouse)) {
+  } else if ((gato1) === (gato2)) {
     vencedor = 'os gatos trombam e o rato foge';
   }
 
@@ -116,11 +128,101 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function separador(string) {
+  let separado = [];
+
+  for (let i = 0; i < string.length; i += 1) {
+    separado[i] = string[i];
+  }
+
+  return separado;
 }
-function decode() {
-  // seu código aqui
+
+function concatenar(array) {
+  let concatenado = '';
+
+  for (let i = 0; i < array.length; i += 1) {
+    concatenado += array[i];
+  }
+  return concatenado;
+}
+
+function a1(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] === 'a') {
+      array[i] = '1';
+    } else if (array[i] === '1') {
+      array[i] = 'a';
+    }
+  }
+}
+
+function e2(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] === 'e') {
+      array[i] = '2';
+    } else if (array[i] === '2') {
+      array[i] = 'e';
+    }
+  }
+}
+
+function i3(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] === 'i') {
+      array[i] = '3';
+    } else if (array[i] === '3') {
+      array[i] = 'i';
+    }
+  }
+}
+
+function o4(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] === 'o') {
+      array[i] = '4';
+    } else if (array[i] === '4') {
+      array[i] = 'o';
+    }
+  }
+}
+
+function u5(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] === 'u') {
+      array[i] = '5';
+    } else if (array[i] === '5') {
+      array[i] = 'u';
+    }
+  }
+}
+
+function encode(string) {
+  let cod = separador(string);
+
+  a1(cod);
+  e2(cod);
+  i3(cod);
+  o4(cod);
+  u5(cod);
+
+  cod = concatenar(cod);
+
+  return cod;
+}
+
+function decode(string) {
+  let cod = separador(string);
+
+  u5(cod);
+  o4(cod);
+  i3(cod);
+  e2(cod);
+  a1(cod);
+
+  cod = concatenar(cod);
+
+  return cod;
 }
 
 module.exports = {

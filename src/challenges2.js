@@ -39,22 +39,30 @@ function validacaoValores(array) {
   return resultado;
 }
 
-function validacaoRepeticao(array) {
-  let resultado = true;
-  let repeticao = 0;
+function repeticao(array, num) {
+  let n = num;
+  let rept = 0;
 
   for (let i = 0; i < array.length; i += 1) {
-    for (let j = 0; j < array.length; j += 1) {
-      if (array[i] === array[j]) {
-        repeticao += 1;
-      }
+    if (n === array[i]) {
+      rept += 1;
     }
-    if (repeticao >= 3) {
+  }
+
+  return rept;
+}
+
+function validacaoRepeticao(array) {
+  let resultado = true;
+  let rept = 0;
+
+  for (let i = 0; i < array.length; i += 1) {
+    rept = repeticao(array, array[i]);
+
+    if (rept >= 3) {
       resultado = false;
       break;
     }
-
-    repeticao = 0;
   }
 
   return resultado;
@@ -63,11 +71,9 @@ function validacaoRepeticao(array) {
 function PhoneNumber(array) {
   let number = '';
 
-  for (let i = 0; i < array.length; i += 1) {
-    if (i === 0) {
-      number += `(${array[i]}`;
-    } else if (i === 1) {
-      number += `${array[i]}) `;
+  for (let i = 1; i < array.length; i += 1) {
+    if (i === 1) {
+      number += `(${array[i - 1]}${array[i]}) `;
     } else if (i === 6) {
       number += `${array[i]}-`;
     } else {

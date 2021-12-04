@@ -25,10 +25,6 @@ function techList(array, name) {
   return verificarVazio(lista);
 }
 
-let teste = [];
-
-console.log(techList(teste, 'Lucas'));
-
 // Desafio 11
 function generatePhoneNumber() {
   // seu código aqui

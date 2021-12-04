@@ -99,9 +99,37 @@ function generatePhoneNumber(array) {
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function tamanhoCheck(lnA, lnB, lnC) {
+  let result = true;
+
+  if (lnA > lnB + lnC || lnB > lnC + lnA || lnC > lnA + lnB) {
+    result = false;
+  }
+
+  return result;
 }
+
+function valorAbsoluto(lnA, lnB, lnC) {
+  let result = true;
+
+  if (lnA < Math.abs(lnB - lnC) || lnB < Math.abs(lnC - lnA) || lnC < Math.abs(lnA - lnB)) {
+    result = false;
+  }
+
+  return result;
+}
+
+function triangleCheck(lineA, lineB, lineC) {
+  let resultado = true;
+
+  if (tamanhoCheck(lineA, lineB, lineC) === false || valorAbsoluto(lineA, lineB, lineC) === false) {
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+console.log(triangleCheck(10, 14, 8));
 
 // Desafio 13
 function hydrate() {

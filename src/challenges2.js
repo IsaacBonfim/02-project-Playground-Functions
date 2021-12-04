@@ -129,11 +129,24 @@ function triangleCheck(lineA, lineB, lineC) {
   return resultado;
 }
 
-console.log(triangleCheck(10, 14, 8));
-
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  let aux = /\d+/g;
+  let bebida = string.match(aux).map(Number);
+  let total = 0;
+  let resultado = '';
+
+  for (let i = 0; i < bebida.length; i += 1) {
+    total += bebida[i];
+  }
+
+  if (total === 1) {
+    resultado = `${total} copo de água`;
+  } else {
+    resultado = `${total} copos de água`;
+  }
+
+  return resultado;
 }
 
 module.exports = {
